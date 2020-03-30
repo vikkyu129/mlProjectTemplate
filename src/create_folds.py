@@ -5,8 +5,11 @@ from sklearn import model_selection
 if __name__=="__main__":
     #reading the dataframe
     df = pd.read_csv("input/train.csv")
+    print(df.head())
+    print(df.shape)
     #making a fake column k-fold to assign the fold number to it
     df['kfold'] = -1
+    print(df.shape)
     #shuffling the data and dropping the index
     df = df.sample(frac=1).reset_index(drop=True)
     #creating the kfolds
